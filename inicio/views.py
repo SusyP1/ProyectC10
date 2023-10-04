@@ -9,15 +9,19 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def saludo(request):	
-	return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\inicio.html")
 
-def crear_estudiante(request,nombre):
-    estudiante = estudiante(nombre=nombre)	
-    crear_estudiante.save()	
-    print(nombre)
-        
- 
+def saludo(request):	
+    return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\inicio.html")
+
+def crear_estudiante(request):
+    return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\crear_estudiante.html",{})
+
+def crear_curso(request):
+    return render(request,r"\inicio\crear_curso")
+	
+def crear_biblio(request):
+    return render(request,r"\inicio\crear_Bibl")
+	
 
 # def curso_formulario(request):	
 #     if request.method == "POST":	

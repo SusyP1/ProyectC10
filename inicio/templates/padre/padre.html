@@ -6,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>
+            {% block title %}
+
+            {% endblock title %}</h1>
+        </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -21,9 +25,9 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="/">Inicio</a>
-                <a class="navbar-brand" href="/crear_estudiante"/<Susy">Estudiante</a>
-                <a class="navbar-brand" href="#!">Curso</a>
-                <a class="navbar-brand" href="#!">Bibliografia</a>
+                <a class="navbar-brand" href="Estudiante/crear estudiante/">Estudiante</a>
+                <a class="navbar-brand" href="/CursoN/">Curso</a>
+                <a class="navbar-brand" href="Bibliografia/Asociar">Bibliografia</a>
 
                 {% comment %} <a class="btn btn-primary" href="#signup">Sign Up</a> {% endcomment %}
             </div>
@@ -35,7 +39,11 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
+                            <h1 class="mb-5">
+                                {% block centro %}
+                                Template <Base></Base>
+                                {% endblock centro %}
+                            </h1>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -76,6 +84,9 @@
                 </div>
             </div>
         </header>
+        <main>
+            {% block main %}
+            {% endblock main %}</h1> 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
