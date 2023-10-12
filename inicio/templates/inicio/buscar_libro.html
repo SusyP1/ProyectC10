@@ -1,0 +1,22 @@
+{% extends "padre/padre.html" %}
+
+{% block title %}
+Buscar libro
+{% endblock title %}
+
+{% block main %}
+
+ {% if variablebiblio.errors%}
+ <p style="color:red"> Datos incorrectos, favor revisar</p>
+ {%endif%}
+
+ <form action ="/Busqueda Libro/" method="GET">
+  
+    <input type = "number" name="Libro">
+    <input type = "submit" name="Buscar"> 
+ <form >
+{% endblock main %}
+
+{% block centro %}
+Estamos buscando libros <Base></Base>
+{% endblock centro %}

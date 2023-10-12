@@ -10,9 +10,9 @@ class formestudiante(forms.Form):
      Email = forms.EmailField()
      
     
-# class Curso(forms.Form):		
-#     Nombre_curso = forms.charfield( max_length=25, required=False)		
-    
-# class Bibliografia(forms.Form):	
-#     Libro = forms.charfield( max_length=50, required=False)
- 
+class formcurso(forms.Form):		
+    Nombre_curso = forms.CharField( max_length=10, required=False)
+
+class formbiblio(forms.Form):	
+  Libro = forms.CharField( max_length=50, required=False)
+  Editorial = forms.CharField( max_length=50, required=False) 

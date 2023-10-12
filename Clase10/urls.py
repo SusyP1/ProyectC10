@@ -16,21 +16,27 @@ Including another URLconf
 # """
 from django.contrib import admin
 from django.urls import include,path 
+ 
+
 from inicio.views import saludo
 from inicio.views import prueba1
 from inicio.views import crear_estudiante
 from inicio.views import crear_curso
 from inicio.views import crear_biblio
 from inicio.views import formestudianteview
+from inicio.views import formcursoview
+from inicio.views import formbiblioview
+from inicio.views import buscarlibroview
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", saludo),
     path("prueba/",prueba1),
     path("crear estudiante/",crear_estudiante,name="crear estudiante"),
-    path("crear curso/",crear_curso,name="CursoN"),
-    path("Asociar Bibliografia/",crear_biblio,name="Asociar Libro"),
+    path("Crear curso/",formcursoview,name="CursoN"),
+    path("Asociar Bibliografia/",formbiblioview,name="Asociar Libro"),
     path("Formulario estudiante/",formestudianteview,name="Formulario estudiante"),
+    path("Busqueda Libro/",buscarlibroview,name="busqueda libro"),
     
 ]
 
