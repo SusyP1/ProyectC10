@@ -15,26 +15,35 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 # """
 from django.contrib import admin
-from django.urls import path, include
-from inicio.views  import saludo
+from django.urls import include,path 
+from inicio.views import saludo
+from inicio.views import prueba1
 from inicio.views import crear_estudiante
+from inicio.views import crear_curso
+from inicio.views import crear_biblio
+from inicio.views import formestudianteview
 
 urlpatterns = [
-    path("", saludo),
     path("admin/", admin.site.urls),
-
+    path("", saludo),
+    path("prueba/",prueba1),
+    path("crear estudiante/",crear_estudiante,name="crear estudiante"),
+    path("crear curso/",crear_curso,name="CursoN"),
+    path("Asociar Bibliografia/",crear_biblio,name="Asociar Libro"),
+    path("Formulario estudiante/",formestudianteview,name="Formulario estudiante"),
+    
 ]
 
 
-# from inicio.views import crear_estudiante
-# from inicio.views import crear_curso
-# from inicio.views import crear_biblio
+# # from inicio.views import crear_estudiante
+# # from inicio.views import crear_curso
+# # from inicio.views import crear_biblio
 
-# urlpatterns = [
-#    path(" ", saludo,name="saludo"),
-#    path(" " ,include("inicio.urls")),	
-#    path("admin/",admin.site.urls),	
-#    path("crear estudiante",crear_estudiante,name="crear estudiante"),
-#    path("crear curso",crear_estudiante,name="Curso Nuevo"),
-#    path("Asociar Bibliografia",crear_biblio,name="Asociar Libro"),
-# ]
+# # urlpatterns = [
+# #    path(" ", saludo,name="saludo"),
+# #    path(" " ,include("inicio.urls")),	
+# #    path("admin/",admin.site.urls),	
+# #    path("crear estudiante",crear_estudiante,name="crear estudiante"),
+# #    path("crear curso",crear_estudiante,name="Curso Nuevo"),
+# #    path("Asociar Bibliografia",crear_biblio,name="Asociar Libro"),
+# # ]

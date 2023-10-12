@@ -2,10 +2,11 @@
 from django.template import Template, Context
 from django.http import HttpResponse
 from django.shortcuts import render
-# from forms import Estudiante
+from inicio.forms import formestudiante
+from inicio.models import Estudiante
+
 # from forms import Curso
 # from forms import Bibliografia
-
 
 
 # Create your views here.
@@ -13,21 +14,34 @@ from django.shortcuts import render
 def saludo(request):	
     return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\inicio.html")
 
+def prueba1(request):	
+    return HttpResponse("Hola Susy")			
+    # return render(request,r"C:\inicio\prueba.html")
+
 def crear_estudiante(request):
-    return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\crear_estudiante.html",{})
+    return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\crear_curso.html")
 
 def crear_curso(request):
-    return render(request,r"\inicio\crear_curso")
+    return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\crear_curso.html")
 	
 def crear_biblio(request):
-    return render(request,r"\inicio\crear_Bibl")
+    return render(request,r"C:\Users\59899\OneDrive\MEgaone\Python\Visual\ProyectC10\inicio\templates\inicio\crear_Bibl.html")
 	
 
-# def curso_formulario(request):	
-#     if request.method == "POST":	
-#        curso=Curso(request.post["curso"],(request.post["nombre"])	
-#        curso.save()	
-#        return render(request,"miApp/inicio.html")	
-# return render(request,"miApp/curso_formulario.html")	
+def formestudianteview(request):	
+    if request.method == "POST":	
+       Studiante=formestudiante(request.POST)
+       
+       print(Studiante)
+       
+       if Studiante.is_valid:
+           informacion = Studiante.cleaned_data
+           student= Estudiante(informacion["Nombre"])
+           student.save()	
+           return render(request,"inicio/inicio.html")	
+       
+    else:
+       Studiante = formestudiante()     
+       return render(request,"inicio/form_estudiante.html", {"Studiante":Studiante})	
 
-
+    
